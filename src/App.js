@@ -3,15 +3,18 @@ import './App.css';
 
 function App() {
 
-  const data=['item1','item2','item3']
+  const student=[
+    {rollno:"1",name:"varghese",gender:"male"},
+    {rollno:"2",name:"sree",gender:"female"},
+  ]
   return (
-    <div align="center">
+    <div>
       <h1>Hello</h1>
 
       <ul>
         {
-          data.map((item)=>(
-            <li>{item}</li>
+          student.map((stud)=>(
+            <li>{stud.rollno} {stud.name}</li>
             ))
         }
       </ul>
