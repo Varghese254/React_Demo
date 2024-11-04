@@ -19,7 +19,6 @@ function Register() {
 
   return (
     <div className='div'>
-      <h1>REGISTRATION</h1>
       <form onSubmit={handleSubmit}>
       <h1>Sate Handling-{formData.name}</h1>
       <input type="text" name="name" value={formData.name} 
