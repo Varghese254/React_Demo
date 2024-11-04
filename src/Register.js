@@ -1,26 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './Register.css';
 
 function Register() {
-  return (
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: ''
+  });
 
+  const handleInputChanges = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formData, "data");
+  };
+
+  return (
     <div className='div'>
-        <h1>REGISTRATION FORM</h1>
-        <form method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required/>
-            <br/>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required/>
-            <br/>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required/>
-            <br/>
-           <div class="button-container"> <button type="submit">Register</button>&nbsp;
-            <button type="cancel">Cancel</button></div>
-            <br/>
-        </form>
+      <h1>REGISTRATION</h1>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          placeholder='Name' 
+          value={formData.name} 
+          onChange={handleInputChanges} 
+          required 
+        />
+        <br/>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder='Email' 
+          value={formData.email} 
+          onChange={handleInputChanges} 
+          required 
+        />
+        <br/>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          placeholder='Password' 
+          value={formData.password} 
+          onChange={handleInputChanges} 
+          required 
+        />
+        <br/>
+        <div className="button-container">
+          <button type="submit" onChange={(event)=>handleSubmit(event)}>Register</button>&nbsp;
+          <button type="button" >Cancel</button>
+        </div>
+        <br/>
+      </form>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;
