@@ -1,0 +1,27 @@
+input, button {
+    width: 100%;
+    padding: 12px; /* Same padding for both input and button */
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}
+
+input {
+    border: 1px solid #ddd;
+}
+
+button {
+    border: none;
+    background-color: #eddb71; /* Update color as needed */
+    color: white;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
