@@ -20,7 +20,8 @@ function Counter() {
       }
 
       const decrement = () => {
-        setFormData((prevData) => ({ ...prevData, count: prevData.count - 1 }));
+      
+        setFormData((prevData) => ({ ...prevData, count: prevData.count >0?prevData.count- 1 :0}));
       };
 
       const reset=()=>{
@@ -32,7 +33,7 @@ function Counter() {
    
     {showButtons && (
         <div>
-          <input type="number" name="count" value={formData.count} 
+          <input type="text" name="count" value={formData.count} 
           onChange={handleInputChanges}/><br/>
           <button onClick={increment}>Increment</button>&nbsp;
           <button onClick={decrement}>Decrement</button>&nbsp;
