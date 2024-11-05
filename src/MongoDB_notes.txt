@@ -1,0 +1,31 @@
+//MONGO DB
+
+in cmd-> type mongosh->use db_name
+db.createCollection("mycollect")
+db.mycollect.insertOne({name:"varghese",age:36,profession:"professor"})
+
+
+ db.collection.insertMany([{name:"basil",age:23,profession:"prompt engineer"},{name:"bindu",age:45,profession:"Teacher"}])
+
+db.mycollect.find()
+
+db.mycollect.find({ name: "aami" })
+
+db.mycollect.find({ _id: ObjectId("6729b2685eba386a040d8191") })
+
+sample> db.mycollect.find({ name: "aami" } && {age:34})
+
+ db.mycollect.find({$and:[{age:34},{name:"aami"}]})
+
+db.mycollect.find({$or:[{age:34},{name:"aami"}]})
+
+ db.mycollect.find({profession:{$in:["developer"]}})
+
+db.mycollect.find().sort({name:-1}) // decending order sort,1 for ascending
+
+
+db.mycollect.find().skip(2)
+
+ db.mycollect.find().skip(2).limit(3)
+
+ db.mycollect.find({name:/^aa/})

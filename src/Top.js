@@ -3,7 +3,10 @@ import React from 'react'
 function Top(props) {
   return (
     <div>
-        <p>Hello,{props.name}</p>
+       
+        <h2>{props.name}</h2>
+        <p>{props.price}</p>
+        <p>{props.description}</p>
     </div>
   )
 }
